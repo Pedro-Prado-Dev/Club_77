@@ -1,3 +1,5 @@
+<!-- templates/produtos/lista_produtos.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,14 +11,9 @@
     <h1>Lista de Produtos</h1>
     <ul>
         {% for produto in produtos %}
-            <li>
-                <a href="{% url 'detalhes_produto' produto.id %}">
-                    {{ produto.nome }} - R$ {{ produto.preco }}
-                </a>
-            </li>
-        {% empty %}
-            <li>Nenhum produto disponível.</li>
+            <li>{{ produto.nome }} - R$ {{ produto.preco }}</li>
         {% endfor %}
     </ul>
+    <button onclick="window.location.href='{% url 'adicionar_produto' %}'">Adicionar Novo Produto</button>
 </body>
 </html>
