@@ -16,6 +16,7 @@
                     <h2><a href="{% url 'detalhes_produto' produto.id %}">{{ produto.nome }}</a></h2>
                     <p class="preco">Preço: R$ {{ produto.preco }}</p>
                     <p>{{ produto.descricao }}</p>
+                    <p class="estoque"> Estoque: {{ produto.estoque }}</p>
                 </div>
                 <div class="botoes">
                     <a href="{% url 'editar_produto' produto.id %}" class="editar">Editar</a>
