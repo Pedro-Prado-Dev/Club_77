@@ -1,19 +1,25 @@
-<!-- templates/produtos/detalhes_produto.html -->
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes do Produto</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'produtos/styles_detalhes.css' %}">
 </head>
 <body>
-    <h1>Detalhes do Produto</h1>
-    <p>Nome: {{ produto.nome }}</p>
-    <p>Descrição: {{ produto.descricao }}</p>
-    <p>Preço: R$ {{ produto.preco }}</p>
-    <p>Estoque: {{ produto.estoque }}</p>
-    <a href="{% url 'lista_produtos' %}">Back</a>
-
+    <div class="container">
+        <div class="produto-details">
+            <h1>Detalhes do Produto</h1>
+            <h2>{{ produto.nome }}</h2>
+            <p><strong>Preço:</strong> R$ {{ produto.preco }}</p>
+            <p><strong>Descrição:</strong> {{ produto.descricao }}</p>
+            <p><strong>Estoque:</strong> {{ produto.estoque }}</p>
+            <!-- Adicione mais detalhes conforme necessário -->
+        </div>
+        <div class="voltar-link">
+            <a href="{% url 'lista_produtos' %}">Voltar para Lista de Produtos</a>
+        </div>
+    </div>
 </body>
 </html>

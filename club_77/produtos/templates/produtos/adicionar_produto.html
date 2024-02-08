@@ -1,19 +1,32 @@
-<!-- templates/produtos/adicionar_produto.html -->
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Produto</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'produtos/styles_adicionar.css' %}">
 </head>
 <body>
-    <h1>Adicionar Produto</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Salvar</button>
-        <a href="{% url 'lista_produtos' %}">Back</a>
-    </form>
+    <div class="container">
+        <h1>Adicionar Produto</h1>
+        <div class="formulario">
+            <form method="post">
+                {% csrf_token %}
+                <label for="id_nome">Nome:</label>
+                <input type="text" id="id_nome" name="nome" required>
+                <label for="id_descricao">Descrição:</label>
+                <textarea id="id_descricao" name="descricao" required></textarea>
+                <label for="id_preco">Preço:</label>
+                <input type="number" id="id_preco" name="preco" step="0.01" required>
+                <label for="id_estoque">Estoque:</label>
+                <input type="number" id="id_estoque" name="estoque" required>
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
+        <div class="voltar-link">
+            <a href="{% url 'lista_produtos' %}">Voltar para Lista de Produtos</a>
+        </div>
+    </div>
 </body>
 </html>

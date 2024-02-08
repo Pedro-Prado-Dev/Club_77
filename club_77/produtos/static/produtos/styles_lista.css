@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.produto {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.produto h2 {
+    margin-bottom: 10px;
+}
+
+.produto p {
+    margin-bottom: 5px;
+}
+
+.produto a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.produto .editar {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.produto .editar:hover {
+    background-color: #218838;
+}
+
+.produto .excluir {
+    background-color: #dc3545;
+    color: #fff;
+    height: 2.2em;
+    border-radius: 0.35em;
+    width: 5em;
+    border: none;
+    font-weight: bold;
+}
+
+.produto .excluir:hover {
+    background-color: #c82333;
+}
+
+.produto .preco {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.produto .botoes {
+    display: flex;
+    gap: 10px;
+}
+.adicionar-link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.adicionar-link a {
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.adicionar-link a:hover {
+    background-color: #0056b3;
+}

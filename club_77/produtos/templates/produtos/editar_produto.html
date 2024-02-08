@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Produto</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'produtos/styles_editar.css' %}">
+</head>
+<body>
+    <h1>Editar Produto</h1>
+    <div class="formulario">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Salvar Alterações</button>
+        </form>
+    </div>
+    <div class="voltar-link">
+            <a href="{% url 'lista_produtos' %}">Voltar para Lista de Produtos</a>
+    </div>
+</body>
+</html>
