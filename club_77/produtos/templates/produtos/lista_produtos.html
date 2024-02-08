@@ -11,9 +11,9 @@
     <h1>Lista de Produtos</h1>
     <ul>
         {% for produto in produtos %}
-            <li>{{ produto.nome }} - R$ {{ produto.preco }}</li>
+            <li><a href="{% url 'detalhes_produto' produto.id %}">{{ produto.nome }}</a> - R$ {{ produto.preco }}</li>
         {% endfor %}
     </ul>
-    <button onclick="window.location.href='{% url 'adicionar_produto' %}'">Adicionar Novo Produto</button>
+    <a href="{% url 'adicionar_produto' %}">Adicionar Novo Produto</a>
 </body>
 </html>
