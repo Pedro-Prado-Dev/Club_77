@@ -1,0 +1,25 @@
+<!-- templates/clientes/lista_clientes.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Clientes</title>
+</head>
+<body>
+    <h1>Lista de Clientes</h1>
+    <ul>
+        {% for cliente in clientes %}
+            <li>{{ cliente.nome }} - {{ cliente.telefone }} - {{ cliente.cpf }}
+                <a href="{% url 'editar_cliente' cliente.id %}">Editar</a>
+                <form action="{% url 'deletar_cliente' cliente.id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">Excluir</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'adicionar_cliente' %}">Adicionar Cliente</a>
+</body>
+</html>
