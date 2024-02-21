@@ -15,16 +15,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from produtos import views
+from django.urls import path, include
+from produtos import views as produtos_views
+from clientes import views as clientes_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.lista_produtos, name='lista_produtos'),
-    path('detalhes/<int:id>/', views.detalhes_produto, name='detalhes_produto'),
-    path('adicionar/', views.adicionar_produto, name='adicionar_produto'),
-    path('detalhes/<int:produto_id>/', views.detalhes_produto, name='detalhes_produto'),
-    path('editar/<int:produto_id>/', views.editar_produto, name='editar_produto'),
-    path('confirmar_exclusao/<int:produto_id>/', views.confirmar_exclusao, name='confirmar_exclusao'),
-    path('deletar/<int:produto_id>/', views.deletar_produto, name='deletar_produto'),
+    path('', produtos_views.lista_produtos, name='lista_produtos'),
+    path('detalhes/<int:id>/', produtos_views.detalhes_produto, name='detalhes_produto'),
+    path('adicionar/', produtos_views.adicionar_produto, name='adicionar_produto'),
+    path('detalhes/<int:produto_id>/', produtos_views.detalhes_produto, name='detalhes_produto'),
+    path('editar/<int:produto_id>/', produtos_views.editar_produto, name='editar_produto'),
+    path('confirmar_exclusao/<int:produto_id>/', produtos_views.confirmar_exclusao, name='confirmar_exclusao'),
+    path('deletar/<int:produto_id>/', produtos_views.deletar_produto, name='deletar_produto'),
+    path('clientes/', include('clientes.urls')),
 ]

@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.cliente {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cliente h2 {
+    margin-bottom: 10px;
+}
+
+.cliente p {
+    margin-bottom: 5px;
+}
+
+.cliente a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.cliente .editar {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.cliente .editar:hover {
+    background-color: #218838;
+}
+
+.cliente .excluir {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.cliente .excluir:hover {
+    background-color: #c82333;
+}

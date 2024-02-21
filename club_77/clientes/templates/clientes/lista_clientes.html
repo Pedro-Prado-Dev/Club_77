@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Clientes</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'clientes/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Clientes</h1>
+        {% for cliente in clientes %}
+            <div class="cliente">
+                <p>Telefone: {{ cliente.telefone }}</p>
+                <p>CPF: {{ cliente.cpf }}</p>
+                <a href="{% url 'editar_cliente' cliente.id %}" class="editar">Editar</a>
+                <form action="{% url 'deletar_cliente' cliente.id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="excluir">Excluir</button>
+                </form>
+            </div>
+        {% endfor %}
+        <div class="adicionar-link">
+            <a href="{% url 'adicionar_cliente' %}" class="adicionar">Adicionar Novo Cliente</a>
+        </div>
+    </div>
+</body>
+</html>
