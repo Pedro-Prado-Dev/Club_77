@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from produtos import views as produtos_views
 from clientes import views as clientes_views
+from vendas import views as vendas_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,4 +30,5 @@ urlpatterns = [
     path('confirmar_exclusao/<int:produto_id>/', produtos_views.confirmar_exclusao, name='confirmar_exclusao'),
     path('deletar/<int:produto_id>/', produtos_views.deletar_produto, name='deletar_produto'),
     path('clientes/', include('clientes.urls')),
+    path('vendas/', include('vendas.urls'))
 ]

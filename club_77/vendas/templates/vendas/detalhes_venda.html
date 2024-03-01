@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Venda</title>
+</head>
+<body>
+    <h1>Detalhes da Venda</h1>
+    <p>Cliente: {{ venda.cliente }}</p>
+    <p>Total: {{ venda.total }}</p>
+    <h2>Itens de Venda</h2>
+    <ul>
+        {% for item in venda.itemvenda_set.all %}
+            <li>Produto: {{ item.produto }}</li>
+            <li>Quantidade: {{ item.quantidade }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

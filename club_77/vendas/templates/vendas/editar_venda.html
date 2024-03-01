@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Venda</title>
+</head>
+<body>
+    <h1>Editar Venda</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ venda_form.as_p }}
+
+        <!-- Renderize manualmente os campos do form de item de venda -->
+        <h2>Itens de Venda</h2>
+        {% for item_venda_form in item_venda_forms %}
+            <div class="item-venda">
+                {{ item_venda_form.as_p }}
+            </div>
+        {% endfor %}
+
+        <button type="submit">Salvar Alterações</button>
+    </form>
+</body>
+</html>

@@ -12,6 +12,7 @@
         <h1>Lista de Clientes</h1>
         {% for cliente in clientes %}
             <div class="cliente">
+                <p>Nome: {{ cliente.nome }}</p>
                 <p>Telefone: {{ cliente.telefone }}</p>
                 <p>CPF: {{ cliente.cpf }}</p>
                 <a href="{% url 'editar_cliente' cliente.id %}" class="editar">Editar</a>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Vendas</title>
+</head>
+<body>
+    <h1>Lista de Vendas</h1>
+    <ul>
+        {% for venda in vendas %}
+            <li>{{ venda.data_venda }} - <a href="{% url 'detalhes_venda' venda.id %}">Detalhes</a> | <a href="{% url 'editar_venda' venda.id %}">Editar</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'adicionar_venda' %}">Adicionar Nova Venda</a>
+</body>
+</html>
