@@ -19,16 +19,11 @@ from django.urls import path, include
 from produtos import views as produtos_views
 from clientes import views as clientes_views
 from vendas import views as vendas_views
+from produtos import views as produtos_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', produtos_views.lista_produtos, name='lista_produtos'),
-    path('detalhes/<int:id>/', produtos_views.detalhes_produto, name='detalhes_produto'),
-    path('adicionar/', produtos_views.adicionar_produto, name='adicionar_produto'),
-    path('detalhes/<int:produto_id>/', produtos_views.detalhes_produto, name='detalhes_produto'),
-    path('editar/<int:produto_id>/', produtos_views.editar_produto, name='editar_produto'),
-    path('confirmar_exclusao/<int:produto_id>/', produtos_views.confirmar_exclusao, name='confirmar_exclusao'),
-    path('deletar/<int:produto_id>/', produtos_views.deletar_produto, name='deletar_produto'),
+    path('produtos/', include('produtos.urls')),
     path('clientes/', include('clientes.urls')),
     path('vendas/', include('vendas.urls'))
 ]
