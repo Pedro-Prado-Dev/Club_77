@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Cliente</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'clientes/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'clientes/styles_editar_clientes.css' %}">
 </head>
 <body>
     <div class="container">
@@ -18,7 +18,8 @@
             <input type="text" id="id_telefone" name="telefone" value="{{ cliente.telefone }}" required>
             <label for="id_cpf">CPF:</label>
             <input type="text" id="id_cpf" name="cpf" value="{{ cliente.cpf }}" required>
-            <button type="submit" class="editar">Salvar Alterações</button>
+            <button type="submit" class="salvar">Salvar Alterações</button>
+            <a href="{% url 'clientes:lista_clientes' %}" class="voltar">Voltar para Lista de Clientes</a>
         </form>
     </div>
 </body>

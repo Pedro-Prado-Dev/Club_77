@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Clientes</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'clientes/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'clientes/styles_lista_clientes.css' %}">
 </head>
 <body>
     <div class="container">
@@ -15,15 +15,18 @@
                 <p>Nome: {{ cliente.nome }}</p>
                 <p>Telefone: {{ cliente.telefone }}</p>
                 <p>CPF: {{ cliente.cpf }}</p>
-                <a href="{% url 'clientes:editar_cliente' cliente.id %}" class="editar">Editar</a>
-                <form action="{% url 'clientes:deletar_cliente' cliente.id %}" method="post">
-                    {% csrf_token %}
-                    <button type="submit" class="excluir">Excluir</button>
-                </form>
+                <div class="botoes">
+                    <a href="{% url 'clientes:editar_cliente' cliente.id %}" class="editar">Editar</a>
+                    <form action="{% url 'clientes:deletar_cliente' cliente.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="excluir">Excluir</button>
+                    </form>
+                </div>
             </div>
         {% endfor %}
         <div class="adicionar-link">
             <a href="{% url 'clientes:adicionar_cliente' %}" class="adicionar">Adicionar Novo Cliente</a>
+            <a href="{% url 'home' %}">Voltar para o Menu Inicial</a>
         </div>
     </div>
 </body>
