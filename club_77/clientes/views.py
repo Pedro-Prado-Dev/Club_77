@@ -1,5 +1,3 @@
-# clientes/views.py
-
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Cliente
 from .forms import ClienteForm
@@ -27,7 +25,7 @@ def editar_cliente(request, cliente_id):
             return redirect('clientes:lista_clientes')
     else:
         form = ClienteForm(instance=cliente)
-    return render(request, 'clientes/editar_cliente.html', {'form': form})
+    return render(request, 'clientes/editar_cliente.html', {'cliente': cliente, 'form': form})
 
 def deletar_cliente(request, cliente_id):
     cliente = get_object_or_404(Cliente, pk=cliente_id)
