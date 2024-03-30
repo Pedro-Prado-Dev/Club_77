@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.vendas-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.venda {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.venda-info p {
+    margin-bottom: 5px;
+}
+
+.venda-botoes {
+    display: flex;
+    gap: 10px;
+}
+
+.venda-botoes a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.venda-botoes .detalhes {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.venda-botoes .detalhes:hover {
+    background-color: #0056b3;
+}
+
+.venda-botoes .editar {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.venda-botoes .editar:hover {
+    background-color: #218838;
+}
+
+.adicionar-link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.adicionar-link a {
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.adicionar-link a:hover {
+    background-color: #0056b3;
+}
