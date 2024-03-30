@@ -5,18 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes da Venda</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'vendas/styles_vendas.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'vendas/styles_detalhes_venda.css' %}">
 </head>
 <body>
-    <h1>Detalhes da Venda</h1>
-    <p>Cliente: {{ venda.cliente }}</p>
-    <p>Total: {{ venda.total }}</p>
-    <h2>Itens de Venda</h2>
-    <ul>
-        {% for item in venda.itemvenda_set.all %}
-            <li>Produto: {{ item.produto }}</li>
-            <li>Quantidade: {{ item.quantidade }}</li>
-        {% endfor %}
-    </ul>
+    <div class="container">
+        <h1>Detalhes da Venda</h1>
+        <p>Cliente: {{ venda.cliente }}</p>
+        <p>Total: {{ venda.total }}</p>
+        <h2>Itens de Venda</h2>
+        <ul>
+            {% for item in venda.itemvenda_set.all %}
+                <li>Produto: {{ item.produto }}</li>
+                <li>Quantidade: {{ item.quantidade }}</li>
+            {% endfor %}
+        </ul>
+        <div class="button-back">
+            <a href="{% url 'vendas:lista_vendas' %}">Voltar para Lista de Vendas</a>
+        </div>
+    </div>
 </body>
 </html>

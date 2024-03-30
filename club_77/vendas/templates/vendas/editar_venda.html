@@ -5,23 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Venda</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'vendas/styles_vendas.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'vendas/styles_editar_venda.css' %}">
 </head>
 <body>
-    <h1>Editar Venda</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ venda_form.as_p }}
-
-        <!-- Renderize manualmente os campos do form de item de venda -->
-        <h2>Itens de Venda</h2>
-        {% for item_venda_form in item_venda_forms %}
+    <div class="container">
+        <h1>Editar Venda</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="cliente">Cliente:</label>
+                <input type="text" id="cliente" name="cliente" value="{{ venda.cliente }}">
+            </div>
+            <div class="form-group">
+                <label for="total">Total:</label>
+                <input type="number" id="total" name="total" value="{{ venda.total }}">
+            </div>
+            <!-- Adicione os campos para editar os itens de venda -->
+            {% for item_venda_form in item_venda_forms %}
             <div class="item-venda">
                 {{ item_venda_form.as_p }}
             </div>
-        {% endfor %}
-
-        <button type="submit">Salvar Alterações</button>
-    </form>
+            {% endfor %}
+            <button type="submit">Salvar Alterações</button>
+        </form>
+        <div class="button-back">
+            <a href="{% url 'vendas:lista_vendas' %}">Voltar para Lista de Vendas</a>
+        </div>
+    </div>
 </body>
 </html>

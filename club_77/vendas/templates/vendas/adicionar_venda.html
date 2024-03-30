@@ -5,17 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Venda</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'vendas/styles_vendas.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'vendas/styles_adicionar_vendas.css' %}">
 </head>
 <body>
-    <h1>Adicionar Venda</h1>
-    <form method="post">
-        {% csrf_token %}
-        <h2>Dados da Venda</h2>
-        {{ venda_form.as_p }}
-        <h2>Itens da Venda</h2>
-        {{ item_form.as_p }}
-        <button type="submit">Adicionar Venda</button>
-    </form>
+    <div class="container">
+        <h1>Adicionar Venda</h1>
+        <form method="post">
+            {% csrf_token %}
+            <h2>Dados da Venda</h2>
+            {{ venda_form.as_p }}
+            <h2>Itens da Venda</h2>
+            {{ item_form.as_p }}
+            <button type="submit">Adicionar Venda</button>
+        </form>
+        <div class="button-back">
+            <a href="{% url 'vendas:lista_vendas' %}">Voltar para Lista de Vendas</a>
+        </div>
+    </div>
 </body>
 </html>
