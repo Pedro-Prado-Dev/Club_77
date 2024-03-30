@@ -26,39 +26,53 @@ h1 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.cliente h2 {
-    margin-bottom: 10px;
 }
 
 .cliente p {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
-.cliente a {
+.cliente .botoes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cliente .botoes a, .cliente .botoes button {
+    color: #fff;
     text-decoration: none;
     padding: 5px 10px;
     border-radius: 5px;
 }
 
-.cliente .editar {
+.cliente .botoes a.editar, .cliente .botoes button.excluir {
     background-color: #28a745;
-    color: #fff;
 }
 
-.cliente .editar:hover {
+.cliente .botoes a.editar:hover, .cliente .botoes button.excluir:hover {
     background-color: #218838;
 }
 
-.cliente .excluir {
+.cliente .botoes button.excluir {
     background-color: #dc3545;
-    color: #fff;
 }
 
-.cliente .excluir:hover {
+.cliente .botoes button.excluir:hover {
     background-color: #c82333;
+}
+
+.adicionar-link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.adicionar-link a {
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.adicionar-link a:hover {
+    background-color: #0056b3;
 }
