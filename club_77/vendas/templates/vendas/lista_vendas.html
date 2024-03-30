@@ -5,15 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Vendas</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'vendas/styles_vendas.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'vendas/styles_lista_vendas.css' %}">
 </head>
 <body>
-    <h1>Lista de Vendas</h1>
-    <ul>
-        {% for venda in vendas %}
-            <li>{{ venda.data_venda }} - <a href="{% url 'vendas:detalhes_venda' venda.id %}">Detalhes</a> | <a href="{% url 'vendas:editar_venda' venda.id %}">Editar</a></li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'vendas:adicionar_venda' %}">Adicionar Nova Venda</a>
+    <div class="container">
+        <h1>Lista de Vendas</h1>
+        <ul class="vendas-lista">
+            {% for venda in vendas %}
+                <li class="venda">
+                    <div class="venda-info">
+                        <p>Data da Venda: {{ venda.data_venda }}</p>
+                        <p>Total: R$ {{ venda.total }}</p>
+                    </div>
+                    <div class="venda-botoes">
+                        <a href="{% url 'vendas:detalhes_venda' venda.id %}" class="detalhes">Detalhes</a>
+                        <a href="{% url 'vendas:editar_venda' venda.id %}" class="editar">Editar</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="adicionar-link">
+            <a href="{% url 'vendas:adicionar_venda' %}">Adicionar Nova Venda</a>
+            <a href="{% url 'home' %}">Voltar para o Menu Inicial</a>
+        </div>
+    </div>
 </body>
 </html>
