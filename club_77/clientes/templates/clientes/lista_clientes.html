@@ -15,15 +15,15 @@
                 <p>Nome: {{ cliente.nome }}</p>
                 <p>Telefone: {{ cliente.telefone }}</p>
                 <p>CPF: {{ cliente.cpf }}</p>
-                <a href="{% url 'editar_cliente' cliente.id %}" class="editar">Editar</a>
-                <form action="{% url 'deletar_cliente' cliente.id %}" method="post">
+                <a href="{% url 'clientes:editar_cliente' cliente.id %}" class="editar">Editar</a>
+                <form action="{% url 'clientes:deletar_cliente' cliente.id %}" method="post">
                     {% csrf_token %}
                     <button type="submit" class="excluir">Excluir</button>
                 </form>
             </div>
         {% endfor %}
         <div class="adicionar-link">
-            <a href="{% url 'adicionar_cliente' %}" class="adicionar">Adicionar Novo Cliente</a>
+            <a href="{% url 'clientes:adicionar_cliente' %}" class="adicionar">Adicionar Novo Cliente</a>
         </div>
     </div>
 </body>

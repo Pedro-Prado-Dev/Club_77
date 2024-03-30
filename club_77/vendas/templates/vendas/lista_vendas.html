@@ -11,9 +11,9 @@
     <h1>Lista de Vendas</h1>
     <ul>
         {% for venda in vendas %}
-            <li>{{ venda.data_venda }} - <a href="{% url 'detalhes_venda' venda.id %}">Detalhes</a> | <a href="{% url 'editar_venda' venda.id %}">Editar</a></li>
+            <li>{{ venda.data_venda }} - <a href="{% url 'vendas:detalhes_venda' venda.id %}">Detalhes</a> | <a href="{% url 'vendas:editar_venda' venda.id %}">Editar</a></li>
         {% endfor %}
     </ul>
-    <a href="{% url 'adicionar_venda' %}">Adicionar Nova Venda</a>
+    <a href="{% url 'vendas:adicionar_venda' %}">Adicionar Nova Venda</a>
 </body>
 </html>
